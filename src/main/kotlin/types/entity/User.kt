@@ -24,6 +24,10 @@ class User (
 
     @Column(name = "updated_at", nullable = false)
     val updatedAt: LocalDateTime = LocalDateTime.now(),
+
+    @OneToMany(mappedBy = "user")
+    val accounts:List<Account> =  mutableListOf()
+
 ){
 
 }

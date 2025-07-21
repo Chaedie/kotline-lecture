@@ -12,6 +12,10 @@ class Account (
     val ulid: String,
 
     // TODO:
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_ulid", nullable = false)
+    val user: User,
+
     @Column(name = "balance", nullable = false, precision = 15, scale = 2)
     var balance: BigDecimal = BigDecimal.ZERO,
 
