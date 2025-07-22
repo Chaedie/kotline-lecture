@@ -2,8 +2,11 @@ plugins {
     id("org.springframework.boot") version "3.2.3"
     kotlin("jvm") version "2.0.21"
     kotlin("plugin.spring") version "1.8.0"
+    kotlin("plugin.serialization") version "2.0.21"
 
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
+
+
 }
 
 group = "com.chaedie"
@@ -28,6 +31,12 @@ dependencies {
     // mongoDB
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // client
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    // jwt
+    implementation("com.auth0:java-jwt:3.12.0")
 
     testImplementation(kotlin("test"))
 }
